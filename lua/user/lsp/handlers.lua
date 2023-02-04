@@ -17,9 +17,9 @@ M.setup = function()
 		{ name = "DiagnosticSignHint", text = "" },
 		{ name = "DiagnosticSignInfo", text = "" },
 	}
-
-	for _, sign in ipairs(signs) do
-		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+	for type, sign in ipairs(signs) do
+		local h1 = "DiagnosticSign" .. type
+		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = h1 })
 	end
 
 	local config = {
@@ -40,7 +40,7 @@ M.setup = function()
 		},
 	}
 
-	vim.diagnostic.config(config)
+	-- vim.diagnostic.config(config)
 
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 		border = "rounded",

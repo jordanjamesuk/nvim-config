@@ -34,7 +34,7 @@ local options = {
   linebreak = true,                        -- companion to wrap, don't split words
   scrolloff = 999,                           -- minimal number of screen lines to keep above and below the cursor
   sidescrolloff = 8,                       -- minimal number of screen columns either side of cursor if wrap is `false`
-  guifont = "monospace:h17",               -- the font used in graphical neovim applications
+  guifont = "Roboto Mono for PowerLine:h17",               -- the font used in graphical neovim applications
 }
 
 vim.opt.shortmess:append "c"
@@ -45,10 +45,14 @@ end
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
-vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+-- vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+
+vim.cmd [[set ut=4000]]
+vim.cmd [[au CursorHoldI * stopinsert]]
+
+vim.cmd [[set wrap!]]
 
 vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
   command = "if mode() != 'c' | checktime | endif",
   pattern = { "*" },
 })
-

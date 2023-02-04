@@ -102,8 +102,14 @@ return packer.startup(function(use)
 
   use { 'kdheepak/lazygit.nvim' }
 
-  use { 'famiu/nvim-reload'} 
+  use { 'famiu/nvim-reload'}
+  
+  use { 'wellle/targets.vim' }
 
+  use { 'puremourning/vimspector' }
+
+  use { 'mechatroner/rainbow_csv' } 
+  use { 'tmhedberg/SimpylFold' }
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
