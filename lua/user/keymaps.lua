@@ -59,8 +59,8 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("n", "di", ":call vimspector#Launch()<CR>", opts)
 keymap("n", "bp", ":call vimspector#ToggleBreakpoint()<CR>", opts)
 
-keymap('n', 'gD', "vim.lsp.buf.declaration", opts)
-keymap('n', 'gd', "vim.lsp.buf.definition", opts)
+keymap('n', 'gD', ":lua vim.lsp.buf.declaration()<CR>", opts)
+keymap('n', 'gd', ":lua vim.lsp.buf.definition()<CR>", opts)
 
 -- Terminal --
 -- Better terminal navigation

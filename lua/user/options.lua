@@ -52,7 +52,12 @@ vim.cmd [[au CursorHoldI * stopinsert]]
 
 vim.cmd [[set wrap!]]
 
+vim.cmd [[set autochdir ]]
+
+
 vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
   command = "if mode() != 'c' | checktime | endif",
   pattern = { "*" },
 })
+
+vim.g.python3_host_prog = "/usr/local/opt/python@3.10/bin/python3"

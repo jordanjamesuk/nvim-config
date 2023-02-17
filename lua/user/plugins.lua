@@ -66,10 +66,6 @@ return packer.startup(function(use)
 	use { "hrsh7th/cmp-nvim-lsp" }
 	use { "hrsh7th/cmp-nvim-lua" }
 
-	-- Snippets
-  use { "L3MON4D3/LuaSnip" } --snippet engine
-  use { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
-
 	-- LSP
 	use { "neovim/nvim-lspconfig" } -- enable LSP
   use { "williamboman/mason.nvim"} -- simple to use language server installer
@@ -85,8 +81,6 @@ return packer.startup(function(use)
   use { "nvim-treesitter/nvim-treesitter-context" }
 	-- Git
 	use { "lewis6991/gitsigns.nvim" }
-  use { "tpope/vim-fugitive" }
-  use { "apzelos/blamer.nvim" }
 
   -- Harpoon
   use { "ThePrimeagen/harpoon" }

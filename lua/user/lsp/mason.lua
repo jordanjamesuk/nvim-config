@@ -1,11 +1,10 @@
 local servers = {
-	"sumneko_lua",
 	-- "cssls",
 	-- "html",
 	-- "tsserver",
-	"pyright",
 	-- "bashls",
 	"jsonls",
+	"pyright",
 	-- "yamlls",
 }
 
@@ -32,13 +31,16 @@ local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
 	return
 end
-
+local util = require("lspconfig/util")
 local opts = {}
-
 for _, server in pairs(servers) do
 	opts = {
 		on_attach = require("user.lsp.handlers").on_attach,
 		capabilities = require("user.lsp.handlers").capabilities,
+		root_dir = function(fname)
+			return util.root_pattern(".git", "setup.py",  "setup.cfg", "pyproject.toml", "requirements.txt")(fname) or
+			  util.path.dirname(fname)
+		  end;
 	}
 
 	server = vim.split(server, "@")[1]
