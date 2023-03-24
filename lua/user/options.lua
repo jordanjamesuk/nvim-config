@@ -47,9 +47,6 @@ vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 -- vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 
-vim.cmd [[set ut=4000]]
-vim.cmd [[au CursorHoldI * stopinsert]]
-
 vim.cmd [[set wrap!]]
 
 vim.cmd [[set autochdir ]]

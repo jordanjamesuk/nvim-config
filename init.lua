@@ -19,5 +19,5 @@ require "user.alpha"
 require "user.whichkey"
 require "user.autocommands"
 require "user.leap-spooky"
-
+require "user.rust-tools"
 require('leap').add_default_mappings()

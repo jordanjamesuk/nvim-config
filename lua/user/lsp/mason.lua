@@ -5,7 +5,8 @@ local servers = {
 	-- "bashls",
 	"jsonls",
 	"pyright",
-	-- "yamlls",
+	-- "rust_analyzer",
+	"yamlls",
 }
 
 local settings = {
@@ -33,6 +34,7 @@ if not lspconfig_status_ok then
 end
 local util = require("lspconfig/util")
 local opts = {}
+
 for _, server in pairs(servers) do
 	opts = {
 		on_attach = require("user.lsp.handlers").on_attach,
@@ -49,6 +51,5 @@ for _, server in pairs(servers) do
 	if require_ok then
 		opts = vim.tbl_deep_extend("force", conf_opts, opts)
 	end
-
 	lspconfig[server].setup(opts)
 end

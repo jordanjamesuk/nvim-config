@@ -43,12 +43,12 @@ return packer.startup(function(use)
   use { "wbthomason/packer.nvim"} -- Have packer manage itself
   use { "nvim-lua/plenary.nvim"} -- Useful lua functions used by lots of plugins
   use { "windwp/nvim-autopairs"} -- Autopairs, integrates with both cmp and treesitter
-  use { "numToStr/Comment.nvim"}
+  use { "numToStr/Comment.nvim"} -- Lets you do gc to comment out code
   use { "JoosepAlviste/nvim-ts-context-commentstring"}
   use { "kyazdani42/nvim-web-devicons"}
   use { "kyazdani42/nvim-tree.lua"}
   use { "akinsho/bufferline.nvim"}
-	use { "moll/vim-bbye"}
+	use { "moll/vim-bbye"} -- lets you close buffers
   use { "nvim-lualine/lualine.nvim" }
   use { "akinsho/toggleterm.nvim" }
   use { "ahmedkhalf/project.nvim" }
@@ -58,11 +58,14 @@ return packer.startup(function(use)
 
 	-- Colorschemes
   use {"ellisonleao/gruvbox.nvim"}
+  use { 'embark-theme/vim', as = 'embark' }
+  use { "catppuccin/nvim", as = "catppuccin" }
 	-- Cmp 
   use { "hrsh7th/nvim-cmp" } -- The completion plugin
   use { "hrsh7th/cmp-buffer" } -- buffer completions
   use { "hrsh7th/cmp-path" } -- path completions
 	use { "saadparwaiz1/cmp_luasnip" } -- snippet completions
+  use { "L3MON4D3/LuaSnip" }
 	use { "hrsh7th/cmp-nvim-lsp" }
 	use { "hrsh7th/cmp-nvim-lua" }
 
@@ -94,8 +97,6 @@ return packer.startup(function(use)
 
   use {'pedrohdz/vim-yaml-folds' }
 
-  use { 'kdheepak/lazygit.nvim' }
-
   use { 'famiu/nvim-reload'}
   
   use { 'wellle/targets.vim' }
@@ -104,6 +105,8 @@ return packer.startup(function(use)
 
   use { 'mechatroner/rainbow_csv' } 
   use { 'tmhedberg/SimpylFold' }
+
+  use {'simrat39/rust-tools.nvim'}
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

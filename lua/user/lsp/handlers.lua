@@ -8,7 +8,6 @@ end
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
-
 M.setup = function()
 	local signs = {
 
@@ -18,8 +17,7 @@ M.setup = function()
 		{ name = "DiagnosticSignInfo", text = "" },
 	}
 	for type, sign in ipairs(signs) do
-		local h1 = "DiagnosticSign" .. type
-		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = h1 })
+		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 	end
 
 	local config = {
@@ -40,7 +38,7 @@ M.setup = function()
 		},
 	}
 
-	-- vim.diagnostic.config(config)
+	vim.diagnostic.config(config)
 
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 		border = "rounded",

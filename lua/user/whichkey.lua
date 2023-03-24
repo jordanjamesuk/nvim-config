@@ -98,7 +98,7 @@ local mappings = {
   },
   ["F"] = { "<cmd>lua require('telescope.builtin').grep_string{ shorten_path = true, word_match = '-w', only_sort_text = true, search = '' }<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-  ["d"] = { "<cmd>DiffviewToggle<cr>", "Toggle Source Control" },
+  ["gd"] = { "<cmd>DiffviewToggle<cr>", "Toggle Source Control" },
 
   p = {
     name = "Packer",
@@ -190,6 +190,22 @@ local mappings = {
     name = "Harpoon",
     a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add to Harpoon" },
     h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon Menu" },
+  },
+
+  d = {
+    name = "Vimspector Debugger",
+    i = { "<cmd>call vimspector#Launch()<cr>", "Start Debugging Session"},
+    c = { "<cmd>call vimspector#Continue()<cr>", "Continue Debugging Session"},
+    s = { "<cmd>call vimspector#Stop()<cr>", "Stop Debugging session"},
+    r = { "<cmd>VimspectorReset<cr>", "Reset Debugger"},
+    R = { "<cmd>call vimspector#Restart()<cr>", "Restart Debugging Session"},
+    p = { "<cmd>call vimspector#Pause()<cr>", "Pause Debugging Session"},
+    b = { "<cmd>call vimspector#ToggleBreakpoint()<cr>", "Toggle Breakpoint"},
+    o = { "<cmd>call vimspector#StepOver()<cr>", "Step Over"},
+    n = { "<cmd>call vimspector#StepInto()<cr>", "Step Into"},
+    m = { "<cmd>call vimspector#StepOut()<cr>", "Step Out"},
+    j = { "<cmd>call vimspector#JumpToNextBreakpoint()<cr>", "Jump to Next Breakpoint"},
+    J = { "<cmd>call vimspector#JumpToPreviousBreakpoint()<cr>", "Jump to Previous Breakpoint"},
   }
 }
 
