@@ -1,12 +1,16 @@
 local servers = {
-	-- "cssls",
-	-- "html",
-	-- "tsserver",
+	"gopls",
+	"cssls",
+	"html",
+	"tsserver",
 	-- "bashls",
 	"jsonls",
 	"pyright",
 	-- "rust_analyzer",
+	"emmet_ls",
+	"lua_ls",
 	"yamlls",
+	"angularls",
 }
 
 local settings = {
@@ -40,9 +44,15 @@ for _, server in pairs(servers) do
 		on_attach = require("user.lsp.handlers").on_attach,
 		capabilities = require("user.lsp.handlers").capabilities,
 		root_dir = function(fname)
-			return util.root_pattern(".git", "setup.py",  "setup.cfg", "pyproject.toml", "requirements.txt")(fname) or
-			  util.path.dirname(fname)
-		  end;
+			return util.root_pattern(
+				".git",
+				"tsconfig.json",
+				"setup.py",
+				"setup.cfg",
+				"pyproject.toml",
+				"requirements.txt"
+			)(fname) or util.path.dirname(fname)
+		end,
 	}
 
 	server = vim.split(server, "@")[1]

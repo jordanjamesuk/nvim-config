@@ -40,76 +40,80 @@ packer.init({
 
 -- Install your plugins here
 return packer.startup(function(use)
-  use { "wbthomason/packer.nvim"} -- Have packer manage itself
-  use { "nvim-lua/plenary.nvim"} -- Useful lua functions used by lots of plugins
-  use { "windwp/nvim-autopairs"} -- Autopairs, integrates with both cmp and treesitter
-  use { "numToStr/Comment.nvim"} -- Lets you do gc to comment out code
-  use { "JoosepAlviste/nvim-ts-context-commentstring"}
-  use { "kyazdani42/nvim-web-devicons"}
-  use { "kyazdani42/nvim-tree.lua"}
-  use { "akinsho/bufferline.nvim"}
-	use { "moll/vim-bbye"} -- lets you close buffers
-  use { "nvim-lualine/lualine.nvim" }
-  use { "akinsho/toggleterm.nvim" }
-  use { "ahmedkhalf/project.nvim" }
-  use { "lewis6991/impatient.nvim" }
-  use { "goolord/alpha-nvim" }
-	use {"folke/which-key.nvim"}
+	use({ "wbthomason/packer.nvim" }) -- Have packer manage itself
+	use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by lots of plugins
+	use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
+	use({ "numToStr/Comment.nvim" }) -- Lets you do gc to comment out code
+	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
+	use({ "kyazdani42/nvim-web-devicons" })
+	use({ "kyazdani42/nvim-tree.lua" })
+	use({ "akinsho/bufferline.nvim" })
+	use({ "moll/vim-bbye" }) -- lets you close buffers
+	use({ "nvim-lualine/lualine.nvim" })
+	use({ "akinsho/toggleterm.nvim" })
+	use({ "ahmedkhalf/project.nvim" })
+	use({ "goolord/alpha-nvim" })
+	use({ "folke/which-key.nvim" })
 
 	-- Colorschemes
-  use {"ellisonleao/gruvbox.nvim"}
-  use { 'embark-theme/vim', as = 'embark' }
-  use { "catppuccin/nvim", as = "catppuccin" }
-	-- Cmp 
-  use { "hrsh7th/nvim-cmp" } -- The completion plugin
-  use { "hrsh7th/cmp-buffer" } -- buffer completions
-  use { "hrsh7th/cmp-path" } -- path completions
-	use { "saadparwaiz1/cmp_luasnip" } -- snippet completions
-  use { "L3MON4D3/LuaSnip" }
-	use { "hrsh7th/cmp-nvim-lsp" }
-	use { "hrsh7th/cmp-nvim-lua" }
+	use({ "catppuccin/nvim", as = "catppuccin" })
+
+	-- Cmp
+	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
+	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
+	use({ "hrsh7th/cmp-path" }) -- path completions
+	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
+	use({ "L3MON4D3/LuaSnip" })
+	use({ "hrsh7th/cmp-nvim-lsp" })
+	use({ "hrsh7th/cmp-nvim-lua" })
 
 	-- LSP
-	use { "neovim/nvim-lspconfig" } -- enable LSP
-  use { "williamboman/mason.nvim"} -- simple to use language server installer
-  use { "williamboman/mason-lspconfig.nvim" }
-	use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
-  use { "RRethy/vim-illuminate" }
+	use({ "neovim/nvim-lspconfig" }) -- enable LSP
+	use({ "williamboman/mason.nvim" }) -- simple to use language server installer
+	use({ "williamboman/mason-lspconfig.nvim" })
+	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
+	use({ "RRethy/vim-illuminate" })
 
 	-- Telescope
-	use { "nvim-telescope/telescope.nvim" }
+	use({ "nvim-telescope/telescope.nvim" })
 
 	-- Treesitter
-	use { "nvim-treesitter/nvim-treesitter"	}
-  use { "nvim-treesitter/nvim-treesitter-context" }
+	use({ "nvim-treesitter/nvim-treesitter" })
+	use({ "nvim-treesitter/nvim-treesitter-context" })
 	-- Git
-	use { "lewis6991/gitsigns.nvim" }
+	use({ "lewis6991/gitsigns.nvim" })
 
-  -- Harpoon
-  use { "ThePrimeagen/harpoon" }
+	-- Harpoon
+	use({ "ThePrimeagen/harpoon" })
 
-  -- Leap
-  use {"ggandor/leap.nvim" }
-  use {"ggandor/leap-spooky.nvim"}
+	-- Leap
+	use({ "ggandor/leap.nvim" })
+	use({ "ggandor/leap-spooky.nvim" })
 
-  -- diffview
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+	-- diffview
+	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 
-  use {'pedrohdz/vim-yaml-folds' }
+	use({ "pedrohdz/vim-yaml-folds" })
 
-  use { 'famiu/nvim-reload'}
+	use({ "famiu/nvim-reload" })
+
+	use({ "wellle/targets.vim" })
+
+	use({ "puremourning/vimspector" })
+
+	use({ "mechatroner/rainbow_csv" })
+	use({ "tmhedberg/SimpylFold" })
+
+	use({ "simrat39/rust-tools.nvim" })
+
+	-- tagbar
+	use({ "preservim/tagbar" })
+
+	use({
+		"heavenshell/vim-jsdoc",
+		run = "make install",
+	})
   
-  use { 'wellle/targets.vim' }
-
-  use { 'puremourning/vimspector' }
-
-  use { 'mechatroner/rainbow_csv' } 
-  use { 'tmhedberg/SimpylFold' }
-
-  use {'simrat39/rust-tools.nvim'}
-  
-  -- tagbar
-  use { 'preservim/tagbar' }
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
