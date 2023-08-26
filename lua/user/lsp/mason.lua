@@ -46,6 +46,7 @@ for _, server in pairs(servers) do
 		root_dir = function(fname)
 			return util.root_pattern(
 				".git",
+				"go.mod",
 				"tsconfig.json",
 				"setup.py",
 				"setup.cfg",

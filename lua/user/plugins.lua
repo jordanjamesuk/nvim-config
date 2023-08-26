@@ -52,7 +52,6 @@ return packer.startup(function(use)
 	use({ "nvim-lualine/lualine.nvim" })
 	use({ "akinsho/toggleterm.nvim" })
 	use({ "ahmedkhalf/project.nvim" })
-	use({ "goolord/alpha-nvim" })
 	use({ "folke/which-key.nvim" })
 
 	-- Colorschemes
@@ -80,22 +79,17 @@ return packer.startup(function(use)
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" })
 	use({ "nvim-treesitter/nvim-treesitter-context" })
+
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
 
 	-- Harpoon
 	use({ "ThePrimeagen/harpoon" })
 
-	-- Leap
-	use({ "ggandor/leap.nvim" })
-	use({ "ggandor/leap-spooky.nvim" })
-
 	-- diffview
 	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 
 	use({ "pedrohdz/vim-yaml-folds" })
-
-	use({ "famiu/nvim-reload" })
 
 	use({ "wellle/targets.vim" })
 
@@ -106,14 +100,11 @@ return packer.startup(function(use)
 
 	use({ "simrat39/rust-tools.nvim" })
 
-	-- tagbar
-	use({ "preservim/tagbar" })
-
 	use({
 		"heavenshell/vim-jsdoc",
 		run = "make install",
 	})
-  
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
