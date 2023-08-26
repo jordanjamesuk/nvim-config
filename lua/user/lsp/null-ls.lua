@@ -17,6 +17,7 @@ null_ls.setup({
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
 		formatting.htmlbeautifier.with({ "--tab-stops", "4", "--indent", "2", "$FILENAME" }),
+		formatting.goimports,
 		-- diagnostics.flake8
 	},
 })
