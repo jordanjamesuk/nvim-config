@@ -58,7 +58,6 @@ vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGai
 
 vim.g.python3_host_prog = "/usr/local/opt/python@3.10/bin/python3"
 
-
 -- DiffviewToggle command. Easier to use
 local diffChange = 0
 function DiffviewToggle()
