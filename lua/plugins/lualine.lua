@@ -1,3 +1,6 @@
+return {
+	"nvim-lualine/lualine.nvim",
+	config = function()
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
 	return
@@ -21,7 +24,7 @@ local diff = {
 	"diff",
 	colored = false,
 	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-  cond = hide_in_width
+	cond = hide_in_width,
 }
 
 local mode = {
@@ -62,6 +65,7 @@ local spaces = function()
 	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
+
 lualine.setup({
 	options = {
 		icons_enabled = true,
@@ -91,3 +95,5 @@ lualine.setup({
 	tabline = {},
 	extensions = {},
 })
+    end
+}
