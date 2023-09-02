@@ -1,4 +1,5 @@
 local servers = {
+	"lua_ls",
 	"gopls",
 	"cssls",
 	"html",
@@ -8,7 +9,6 @@ local servers = {
 	"pyright",
 	-- "rust_analyzer",
 	"emmet_ls",
-	"lua_ls",
 	"yamlls",
 	"angularls",
 }

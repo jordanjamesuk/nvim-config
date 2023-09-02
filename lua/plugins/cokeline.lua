@@ -19,6 +19,11 @@ return {
 					return " " .. buffer.filename .. "   "
 				end,
 			},
+			{
+				text = function(buffer)
+					return buffer.is_modified and "●" or " "
+				end,
+			},
 		},
 		default_hl = {
 			bg = function(buffer)
