@@ -27,6 +27,12 @@ return {
 				numhl = "GitSignsChangeNr",
 				linehl = "GitSignsChangeLn",
 			},
+			untracked = {
+				hl = "GitSignsUntracked",
+				text = '~',
+				numhl = "GitSignsUntrackedNr",
+				linehl = "GitSignsUntrackedLn",
+			},
 		},
 		signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
 		numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
