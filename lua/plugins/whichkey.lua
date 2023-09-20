@@ -127,7 +127,7 @@ return {
 				b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 				c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
 				d = { "<cmd>DiffviewToggle<cr>", "Toggle Source Control" },
-				g = { "<cmd>DiffviewToggle HEAD<cr>", "Compare local to remote" },
+				g = { "<cmd>DiffviewToggle origin/main<cr>", "Compare local to remote main" },
 			},
 			l = {
 				name = "LSP",
