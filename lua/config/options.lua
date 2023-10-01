@@ -60,13 +60,13 @@ vim.g.python3_host_prog = "/usr/local/opt/python@3.10/bin/python3"
 
 -- DiffviewToggle command. Easier to use
 local diffChange = 0
-function DiffviewToggle(somePoint)
-	if somePoint == nil then
-		somePoint = ""
+function DiffviewToggle(tag)
+	if tag == nil then
+		tag = ""
 	end
 
 	if diffChange == 0 then
-		vim.cmd("DiffviewOpen " .. somePoint)
+		vim.cmd("DiffviewOpen " .. tag)
 		diffChange = 1
 	else
 		vim.cmd("DiffviewClose")
