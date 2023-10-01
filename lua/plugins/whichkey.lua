@@ -104,7 +104,7 @@ return {
 				"Find Text in current buffer",
 			},
 			["F"] = {
-				"<cmd>lua require('telescope.builtin').grep_string{ shorten_path = true, word_match = '-w', only_sort_text = true, search = '' }<cr>",
+				"<cmd>lua require('telescope.builtin').live_grep{ shorten_path = true, word_match = '-w', only_sort_text = true, search = '' }<cr>",
 				"Find Text",
 			},
 			["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
